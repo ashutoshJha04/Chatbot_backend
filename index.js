@@ -56,7 +56,7 @@ mongoose.connect('mongodb+srv://Ashutosh_04:v526FKdmZUKwwKsv@cluster0.rrxicof.mo
 
 // handling requests from openai and posting data to database
 
-const openaiClient = new openai.OpenAI({ apiKey: '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' });
+const openaiClient = new openai.OpenAI({ apiKey: process.env.OPENAI_API_KEY});
 
 app.post('/openai', async (req, res) => {
   const { message } = req.body;
